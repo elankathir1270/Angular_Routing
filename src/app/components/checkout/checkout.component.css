@@ -1,0 +1,26 @@
+.checkout-container {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.payment-heading {
+  font-size: 1.5rem;
+}
+
+.receipt-heading {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.cvv-info {
+  font-size: 0.9rem;
+  color: #6c757d;
+  display: block;
+  text-align: right;
+}

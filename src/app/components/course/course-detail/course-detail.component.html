@@ -1,0 +1,101 @@
+<div class="container courses-detail-main-container  my-2">
+  <div class="row">
+      <!-- Course Details Section -->
+      <div class="col-lg-8 col-md-12 mb-4">
+          <div class="card">
+              <img [src]="selectedCourse.image" class="card-img-top course-banner-image" alt="Course Banner">
+              <div class="card-body">
+                  <h1 class="card-title">{{ selectedCourse.title }}</h1>
+                  <div class="course-info mb-3">
+                      <span class="badge bg-primary me-2"><b>Course Rating:</b> {{ selectedCourse.rating }}</span>
+                      <span class="badge bg-secondary me-2"><b>Duration:</b> {{ selectedCourse.duration }} hours</span>
+                      <span class="badge bg-success"><b>Author:</b> {{ selectedCourse.author }}</span>
+                  </div>
+                  <p class="card-text">
+                      {{ selectedCourse.desc }}
+                  </p>
+              </div>
+          </div>
+
+          <!-- Students Reviews Section -->
+          <div class="mt-4">
+              <h2>Students Reviews</h2>
+              <hr>
+              <div class="card mb-3">
+                  <div class="card-body">
+                      <h3>Mark Stefan</h3>
+                      <p>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                  </div>
+              </div>
+              <div class="card mb-3">
+                  <div class="card-body">
+                      <h3>Josef Stalin</h3>
+                      <p>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+                      </p>
+                  </div>
+              </div>
+              <div class="card mb-3">
+                  <div class="card-body">
+                      <h3>Ravi Kumar</h3>
+                      <p>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et m veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                  </div>
+              </div>
+              <!-- Previous and Next Course Buttons -->
+              <div class="d-flex justify-content-between mt-3">
+                  <button class="btn btn-outline-primary" [routerLink]="'/courses/course/'+ (selectedCourse.id - 1)">Previous Course</button>
+                  <button class="btn btn-outline-primary" [routerLink]="'/courses/course/'+ (selectedCourse.id + 1)">Next Course</button>
+              </div>
+          </div>
+      </div>
+
+      <!-- Course Action Items -->
+      <div class="col-lg-4 col-md-12">
+          <div class="card p-3 mb-4 text-center">
+              <h2 class="text-success">Get Flat 80% Off on this course.</h2>
+          </div>
+
+          <!-- Course Selection Category -->
+          <div class="btn-group d-flex mb-3" role="group">
+              <button type="button" class="btn btn-outline-primary w-100">Personal</button>
+              <button type="button" class="btn btn-outline-secondary w-100">Team</button>
+          </div>
+
+          <!-- Pricing Section -->
+          <div class="mb-4 text-center">
+              <div class="display-4 text-dark">${{ selectedCourse.price }}</div>
+              <span class="text-muted"><s>$3199</s></span>
+              <span class="badge bg-danger ms-2">86% OFF</span>
+              <div class="mt-2 text-muted"><i class="fa fa-clock-o"></i> <b>1 Day</b> left at this price.</div>
+          </div>
+
+          <!-- Buy Course Button -->
+          <button class="btn btn-success btn-lg w-100 mb-3">Buy this course</button>
+          <p class="text-center text-muted">30-Day Money-Back Guarantee Full Lifetime Access</p>
+
+          <!-- Additional Options -->
+          <div class="d-flex justify-content-between mb-4">
+              <a href="#" class="link-primary">Gift this course</a>
+              <a href="#" class="link-primary">Apply coupon</a>
+          </div>
+
+          <!-- Divider -->
+          <div class="text-center my-4">
+              <span class="border-bottom border-dark">or</span>
+          </div>
+
+          <!-- Subscription Information -->
+          <div class="text-center mb-4">
+              <p>Subscribe to Procademy's top courses</p>
+              <p>Get this course, plus 800+ of our top-rated courses, with Personal Plan. <a href="#">Learn more</a></p>
+          </div>
+
+          <!-- Subscription Button -->
+          <button class="btn btn-primary btn-lg w-100">Start subscription</button>
+      </div>
+  </div>
+</div>

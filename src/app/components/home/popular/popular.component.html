@@ -1,0 +1,41 @@
+<div class="section-header text-center mb-4">
+  <h1>Popular Courses</h1>
+</div>
+
+<div class="home-page-popular-courses container">
+  <div class="home-page-popular-courses-desc mb-4">
+      <p class="lead">
+          <b>Highest rated courses by students:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+  </div>
+
+  <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let course of popularCourses">
+          <div class="card h-100">
+              <img [src]="course.image" class="card-img-top" alt="Course">
+              <div class="card-body">
+                  <h5 class="card-title">{{ course.title }}</h5>
+                  <p class="card-text">{{ course.desc.substring(0, 120) }}...</p>
+                  <div class="d-flex justify-content-between">
+                      <div class="course-price"><b>PRICE:</b> {{ course.price | currency }}</div>
+                      <div class="course-rating"><b>RATINGS:</b> {{ course.rating }}</div>
+                  </div>
+
+              <div class="card-footer">
+                  <div class="d-grid gap-2">
+                      <button class="btn btn-primary">BUY NOW</button>
+                      <button class="btn btn-secondary">DETAILS</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="text-center mt-4 mb-4">
+      <button class="btn btn-outline-primary">
+          Go to Courses Page
+      </button>
+  </div>
+</div>
+

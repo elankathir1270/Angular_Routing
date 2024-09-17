@@ -1,0 +1,89 @@
+<div class="container main-contact-container mt-5">
+
+
+  <!-- Contact Information Section -->
+  <h2 class="text-center mb-4">Contact us for more details</h2>
+  <p class="text-center mb-5">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </p>
+
+  <!-- Contact Form -->
+  <div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10">
+      <form (ngSubmit)="onSubmit()" #contactForm="ngForm" novalidate>
+        <!-- First Name -->
+        <div class="mb-3">
+          <label for="fname" class="form-label">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="fname"
+            placeholder="Your name.."
+            required
+            [(ngModel)]="firstName"
+            name="firstname"
+            #firstNameInput="ngModel"
+          />
+          <div *ngIf="firstNameInput.invalid && firstNameInput.touched" class="text-danger">
+            First name is required.
+          </div>
+        </div>
+
+        <!-- Last Name -->
+        <div class="mb-3">
+          <label for="lname" class="form-label">Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="lname"
+            placeholder="Your last name.."
+            required
+            [(ngModel)]="lastName"
+            name="lastname"
+            #lastNameInput="ngModel"
+          />
+          <div *ngIf="lastNameInput.invalid && lastNameInput.touched" class="text-danger">
+            Last name is required.
+          </div>
+        </div>
+
+        <!-- Country -->
+        <div class="mb-3">
+          <label for="country" class="form-label">Country</label>
+          <select class="form-select" id="country" required [(ngModel)]="country" name="country">
+            <option value="" disabled>Select your country</option>
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+          </select>
+        </div>
+
+        <!-- Subject -->
+        <div class="mb-4">
+          <label for="subject" class="form-label">Subject</label>
+          <textarea
+            class="form-control"
+            id="subject"
+            rows="5"
+            placeholder="Write something.."
+            required
+            [(ngModel)]="message"
+            name="message"
+            #messageInput="ngModel"
+          ></textarea>
+          <div *ngIf="messageInput.invalid && messageInput.touched" class="text-danger">
+            Message is required.
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="text-center mb-3">
+          <button type="submit" class="btn btn-primary w-50" [disabled]="contactForm.invalid">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

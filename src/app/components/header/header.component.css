@@ -1,0 +1,28 @@
+
+.active {
+  font-size: 18/* Dark overlay background */
+  .login-form-container {
+    background-color: rgba(0, 0, 0, 0.7); /* Black background with 70% opacity */
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  /* Styling for the login form */
+  .login-form {
+    background-color: white;
+  }
+
+  .cancel-button-div {
+    cursor: pointer;
+    color: #999;
+    font-size: 20px;
+  }
+
+  .cancel-button-div:hover {
+    color: #333;
+  }
+
+}

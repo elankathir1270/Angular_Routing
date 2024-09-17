@@ -1,0 +1,36 @@
+<div class="courses-page-main-container">
+  <!-- Courses Banner -->
+  <div class="courses-banner bg-dark text-white text-center py-5">
+      <div class="courses-banner-layover">
+          <h1>Empower your future with procademy's high quality online coding classes.</h1>
+      </div>
+  </div>
+
+  <!-- All Courses Section -->
+  <div class="courses-page-all-courses container my-5">
+      <h2 class="text-center mb-4">Choose the course best suits you</h2>
+      <hr class="mb-5">
+
+      <!-- Courses List -->
+      <div class="row">
+          <div class="col-md-4 mb-4" *ngFor="let course of AllCourses">
+              <div class="card h-100">
+                  <img [src]="course.image" class="card-img-top" alt="Course">
+                  <div class="card-body">
+                      <h5 class="card-title">{{ course.title }}</h5>
+                      <p class="card-text">{{ course.desc.substring(0, 120) }}</p>
+                      <div class="d-flex justify-content-between">
+                          <span class="course-price"><b>PRICE:</b> {{ course.price | currency }}</span>
+                          <span class="course-rating"><b>RATINGS:</b> {{ course.rating }}</span>
+                      </div>
+                  </div>
+                  <div class="card-footer text-center">
+                      <button class="btn btn-primary mx-2" [routerLink]="'/courses/checkout'" [state]="course">BUY NOW</button>
+                      <button class="btn btn-secondary" [routerLink]="'/courses/course/'+ course.id">DETAILS</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+

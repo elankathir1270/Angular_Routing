@@ -1,0 +1,124 @@
+<div class="container checkout-container mt-5">
+  <div class="row">
+    <!-- Left Side: Payment Information -->
+    <div class="col-lg-6 col-md-12 mb-4">
+      <div class="card p-4 shadow-sm">
+        <h3 class="payment-heading text-center mb-4">Payment Information</h3>
+        <form (ngSubmit)="onSubmit()">
+          <!-- Full Name -->
+          <div class="mb-3">
+            <label for="full-name" class="form-label">Full Name</label>
+            <input
+              id="full-name"
+              name="full-name"
+              class="form-control"
+              placeholder="Satoshi Nakamoto"
+              required
+              type="text"
+
+            />
+
+          </div>
+
+          <!-- Card Number -->
+          <div class="mb-3">
+            <label for="credit-card-num" class="form-label">
+              Card Number
+              <span class="card-logos">
+                <i class="fa fa-cc-visa mx-1" aria-hidden="true"></i>
+                <i class="fa fa-cc-amex mx-1" aria-hidden="true"></i>
+                <i class="fa fa-cc-mastercard mx-1" aria-hidden="true"></i>
+                <i class="fa fa-cc-discover mx-1" aria-hidden="true"></i>
+              </span>
+            </label>
+            <input
+              id="credit-card-num"
+              name="credit-card-num"
+              class="form-control"
+              placeholder="1111-2222-3333-4444"
+              required
+              type="text"
+
+            />
+
+          </div>
+
+          <!-- Expiration Date -->
+          <div class="mb-3">
+            <label class="form-label">Expires on:</label>
+            <div class="d-flex">
+              <!-- Month -->
+              <div class="me-3">
+                <label for="expiration-month" class="form-label">Month</label>
+                <select id="expiration-month" class="form-select" required >
+                  <option value="">Month</option>
+                  <option *ngFor="let month of months" [value]="month">{{ month }}</option>
+                </select>
+              </div>
+
+              <!-- Year -->
+              <div>
+                <label for="expiration-year" class="form-label">Year</label>
+                <select id="expiration-year" class="form-select" required >
+                  <option value="">Year</option>
+                  <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- CVV -->
+          <div class="mb-3">
+            <label for="cvv" class="form-label">CVV</label>
+            <input
+              id="cvv"
+              name="cvv"
+              class="form-control"
+              placeholder="415"
+              type="text"
+              required
+
+            />
+
+            <a class="cvv-info" href="#">What is CVV?</a>
+          </div>
+
+          <!-- Submit Button -->
+          <button class="btn btn-primary w-100">
+            <i class="fa fa-lock me-2" aria-hidden="true"></i> Buy Now
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Right Side: Receipt -->
+    <div class="col-lg-6 col-md-12 p-2">
+      <div class="card p-4 shadow-sm">
+        <h2 class="receipt-heading">{{ course.title }}</h2>
+        <table class="table">
+          <tr>
+            <td>{{ course.price }} x 1 Course</td>
+            <td class="price text-end">{{ course.price }} USD</td>
+          </tr>
+          <tr>
+            <td>Discount</td>
+            <td class="price text-end">0.00 USD</td>
+          </tr>
+          <tr>
+            <td>Subtotal</td>
+            <td class="price text-end">{{ course.price }} USD</td>
+          </tr>
+          <tr>
+            <td>Tax</td>
+            <td class="price text-end">47.41 USD</td>
+          </tr>
+          <tr class="total">
+            <td><strong>Total</strong></td>
+            <td class="price text-end"><strong>{{ course.price + 47.41 }} USD</strong></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
